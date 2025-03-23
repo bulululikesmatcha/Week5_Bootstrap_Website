@@ -26,30 +26,7 @@
       height: 100vh;
     }
 
-    .scroll-container {
-      overflow-x: auto;
-      white-space: nowrap;
-      padding-bottom: 1rem;
-    }
-
-    .scroll-container::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .scroll-container::-webkit-scrollbar-thumb {
-      background-color: #00d1d1;
-      border-radius: 4px;
-    }
-
-    .scroll-container .card {
-      min-width: 250px;
-      display: inline-block;
-    }
-
-    .card img {
-      object-fit: cover;
-    }
-
+    /* Video Carousel Styles */
     .carousel-item iframe {
       width: 100%;
       height: 500px; /* Adjust height as needed */
@@ -99,24 +76,21 @@
     </button>
   </div>
 
- 
+  <!-- Video Carousel -->
   <div class="container mt-5">
     <h2 class="text-center">Videos</h2>
     <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-      
         <div class="carousel-item active">
           <div class="ratio ratio-16x9">
             <iframe src="https://www.youtube.com/embed/y1lYUwiRRjI?si=gBkWOtDMAyaVMOwB" allowfullscreen></iframe>
           </div>
         </div>
-   
         <div class="carousel-item">
           <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/wufUX5P2Ds8?si=HT0ZmgEN4FqW_6Wq"" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/wufUX5P2Ds8?si=HT0ZmgEN4FqW_6Wq" allowfullscreen></iframe>
           </div>
         </div>
-     
         <div class="carousel-item">
           <div class="ratio ratio-16x9">
             <iframe src="https://www.youtube.com/embed/J1Ip2sC_lss?si=FTAtGi1iDLywec0Q" allowfullscreen></iframe>
@@ -132,10 +106,9 @@
     </div>
   </div>
 
-
   <footer style="background-color: #00d1d1;" class="py-4 mt-5">
     <div class="container">
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-md-4 text-center">
           <h5>Follow Us</h5>
           <a href="#" class="text-white me-2">Facebook</a>
@@ -147,6 +120,7 @@
       <p class="text-center">&copy; 2024 Bululu. All Rights Reserved.</p>
     </div>
   </footer>
+  
 
   <!-- Scroll Hide/Show Navbar Script -->
   <script>
