@@ -3,14 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>homepage</title>
+  <title>Homepage</title>
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <!-- Bootstrap JS Bundle -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
+    body {
+      margin: 0;
+    }
+
+    .navbar-container {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      transition: top 0.3s;
+    }
+
+    .carousel-item img {
+      object-fit: cover;
+      height: 100vh;
+    }
+
     .scroll-container {
       overflow-x: auto;
       white-space: nowrap;
@@ -27,50 +42,53 @@
     }
 
     .scroll-container .card {
-      min-width: calc(25% - 1rem); /* 4 cards per view */
+      min-width: 250px;
       display: inline-block;
-      margin-right: 1rem;
-      vertical-align: top;
     }
 
-    @media (max-width: 768px) {
-      .scroll-container .card {
-        min-width: 80%;
-      }
+    .card img {
+      object-fit: cover;
+    }
+
+    .carousel-item iframe {
+      width: 100%;
+      height: 500px; /* Adjust height as needed */
     }
   </style>
 </head>
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg" style="background-color: #00d1d1;">
-    <div class="container-fluid">
-      <a class="navbar-brand" style="color: #000000;" href="#">Welcome BLOOMS!</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacts.html">Contact</a></li>
-        </ul>
+  <div class="navbar-container" id="navbarContainer">
+    <nav class="navbar navbar-expand-lg" style="background-color: #00d1d1;">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="color: #000000;" href="#">Welcome BLOOMS!</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacts.html">Contact</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
   <!-- Carousel -->
-  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" style="margin-top: 70px;">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="GROUP-1ver2-scaled.webp" class="d-block w-100" alt="Slide 1" height="700px">
+        <img src="GROUP-1ver2-scaled.webp" class="d-block w-100" alt="Slide 1">
       </div>
       <div class="carousel-item">
-        <img src="slide1.jpg" class="d-block w-100" alt="Slide 2" height="700px">
+        <img src="slide1.jpg" class="d-block w-100" alt="Slide 2">
       </div>
       <div class="carousel-item">
-        <img src="slide2.jpg" class="d-block w-100" alt="Slide 3" height="700px">
+        <img src="slide2.jpg" class="d-block w-100" alt="Slide 3">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
@@ -81,122 +99,43 @@
     </button>
   </div>
 
-  <!-- About Section -->
+ 
   <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6">
-        <h2>About</h2>
-        <p>BINI is a Filipino pop phenomenon with 8 talented members: Aiah, Colet, Maloi, Gwen, Stacey, Mikha, Jhoanna, and Sheena.</p>
-        <p>The girls are dominating Filipino music charts with hits like “Salamin, Salamin” and “Pantropiko,” and are gaining international attention.</p>
+    <h2 class="text-center">Videos</h2>
+    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+      
+        <div class="carousel-item active">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/y1lYUwiRRjI?si=gBkWOtDMAyaVMOwB" allowfullscreen></iframe>
+          </div>
+        </div>
+   
+        <div class="carousel-item">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/wufUX5P2Ds8?si=HT0ZmgEN4FqW_6Wq"" allowfullscreen></iframe>
+          </div>
+        </div>
+     
+        <div class="carousel-item">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/J1Ip2sC_lss?si=FTAtGi1iDLywec0Q" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6">
-        <img src="public/bini-2485185184.jpg" class="img-fluid rounded shadow" alt="About Us" width="300px" height="300px">
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
     </div>
   </div>
 
-  <!-- Scrollable Members Section -->
-  <div class="container mt-5">
-    <h3 class="text-center mb-4">Members</h3>
-    <div class="scroll-container">
-      <!-- Member 1 -->
-      <div class="card">
-        <img src="JHOANNA-1.webp" class="card-img-top" alt="Jhoanna" height="400px">
-        <div class="card-body">
-          <h5 class="card-title">Bini Jhoanna</h5>
-          <p class="card-text">Full Name: Jhoanna Christine Robles</p>
-          <p class="card-text">Date of Birth: January 26, 2004</p>
-        </div>
-      </div>
 
-      <!-- Member 2 -->
-      <div class="card">
-        <img src="AIAH-1.webp" class="card-img-top" alt="Aiah" height="400px">
-        <div class="card-body">
-          <h5 class="card-title">Bini Aiah</h5>
-          <p class="card-text">Full Name: Maraiah Queen Arceta</p>
-          <p class="card-text">Date of Birth: January 27, 2001</p>
-        </div>
-      </div>
-
-      <!-- Member 3 -->
-      <div class="card">
-        <img src="COLET-1.webp" class="card-img-top" alt="Colet" height="400px">
-        <div class="card-body">
-          <h5 class="card-title">Bini Colet</h5>
-          <p class="card-text">Full Name: Ma. Nicolette Vergara</p>
-          <p class="card-text">Date of Birth: September 14, 2001</p>
-        </div>
-      </div>
-
-      <!-- Member 4 -->
-      <div class="card">
-        <img src="SHEENA-1.webp" class="card-img-top" alt="Sheena" height="400px">
-        <div class="card-body">
-          <h5 class="card-title">Bini Sheena</h5>
-          <p class="card-text">Full Name: Sheena Mae Catacutan</p>
-          <p class="card-text">Date of Birth: May 9, 2004</p>
-        </div>
-      </div>
-
-      <!-- Member 5 -->
-      <div class="card">
-        <img src="MIKHA-1.webp" class="card-img-top" alt="Mikha" height="400px">
-        <div class="card-body">
-          <h5 class="card-title">Bini Mikha</h5>
-          <p class="card-text">Full Name: Mikhaela Janna Lim</p>
-          <p class="card-text">Date of Birth: November 8, 2003</p>
-        </div>
-      </div>
-
-      <!-- Member 6 -->
-      <div class="card">
-        <img src="STACEY-1.webp" class="card-img-top" alt="Stacey" height="400px">
-        <div class="card-body">
-          <h5 class="card-title">Bini Stacey</h5>
-          <p class="card-text">Full Name: Stacey Aubrey Sevilleja</p>
-          <p class="card-text">Date of Birth: July 13, 2003</p>
-        </div>
-      </div>
-
-      <!-- Member 7 -->
-      <div class="card">
-        <img src="MALOI-1.webp" class="card-img-top" alt="Maloi" height="400px">
-        <div class="card-body">
-          <h5 class="card-title">Bini Maloi</h5>
-          <p class="card-text">Full Name: Mary Loi Yves Ricalde</p>
-          <p class="card-text">Date of Birth: May 27, 2002</p>
-        </div>
-      </div>
-
-      <!-- Member 8 -->
-      <div class="card">
-        <img src="GWEN-1.webp" class="card-img-top" alt="Gwen" height="400px">
-        <div class="card-body">
-          <h5 class="card-title">Bini Gwen</h5>
-          <p class="card-text">Full Name: Gweneth L. Apuli</p>
-          <p class="card-text">Date of Birth: June 19, 2003</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
   <footer style="background-color: #00d1d1;" class="py-4 mt-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
-          <h5>About Us</h5>
-          <p>We create innovative and responsive web applications.</p>
-        </div>
-        <div class="col-md-4">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Home</a></li>
-            <li><a href="#" class="text-white">Services</a></li>
-            <li><a href="#" class="text-white">Contact</a></li>
-          </ul>
-        </div>
         <div class="col-md-4 text-center">
           <h5>Follow Us</h5>
           <a href="#" class="text-white me-2">Facebook</a>
@@ -204,9 +143,24 @@
           <a href="#" class="text-white">Instagram</a>
         </div>
       </div>
-      <hr>
+      <hr>  
       <p class="text-center">&copy; 2024 Bululu. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <!-- Scroll Hide/Show Navbar Script -->
+  <script>
+    const navbar = document.getElementById("navbarContainer");
+  
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+  
+      if (scrollTop === 0) {
+        navbar.style.top = "0"; // back to top, show navbar
+      } else {
+        navbar.style.top = "-100px"; // hide when scrolled down
+      }
+    });
+  </script>
 </body>
 </html>

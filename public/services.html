@@ -1,51 +1,87 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Week 5 Bootstrap</title>
+    <title>Shop</title>
 
     <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-<!-- Bootstrap JavaScript Bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Bootstrap JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .navbar-container {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        transition: top 0.3s;
+      }
+
+      .carousel-item img {
+        object-fit: cover;
+        height: 100vh;
+      }
+
+      .scroll-container {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 1rem;
+      }
+
+      .scroll-container::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .scroll-container::-webkit-scrollbar-thumb {
+        background-color: #00d1d1;
+        border-radius: 4px;
+      }
+
+      .scroll-container .card {
+        min-width: 250px;
+        display: inline-block;
+        margin-right: 1rem;
+        vertical-align: top;
+      }
+
+      .card img {
+        object-fit: cover;
+        height: 300px;
+      }
+    </style>
   </head>
 
   <body>
-    <nav class="navbar fixed-top navbar-expand-lg" style="background-color: #e3f2fd;">
-      <div class="container-fluid">
-       
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="contacts.html">Contact</a></li>
-          </ul>
+    <!-- Navbar -->
+    <div class="navbar-container" id="navbarContainer">
+      <nav class="navbar navbar-expand-lg" style="background-color: #00d1d1;">
+        <div class="container-fluid">
+          <a class="navbar-brand" style="color: #000000;" href="#">You can buy here the exclusive merch of Bini!</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="services.html">Shop</a></li>
+              <li class="nav-item"><a class="nav-link" href="contacts.html">Contact</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-    
-    <div class="hero-section container my-5">
-      <!-- Heading on top -->
-      <h3 class="text-center mb-4">You can buy here the exclusive merchs of Bini!</h3>
-    
-      <!-- Image below with max width -->
-      <img src="bini merch.jpg_large" class="img-fluid d-block mx-auto custom-image" alt="Bini Merch">
+      </nav>
     </div>
-    
-    
 
-
-      
-        <div class="carousel-item">
-          <img src="slide3.jpg" class="d-block w-100" alt="Slide 3" height="700px">
+    <!-- Carousel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="bini merch.jpg_large" class="d-block w-100" alt="Slide 1">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
@@ -55,61 +91,51 @@
         <span class="carousel-control-next-icon"></span>
       </button>
     </div>
+    
+
+    <!-- Exclusive Merch Section (Scrollable) -->
     <div class="container mt-5">
-      <div class="row">
-        <div class="col-md-6">
-          <h2>About Us</h2>
-          <p>Buy the official lightstick of Bini.</p>
-          <button class="btn btn-primary">Learn More</button>
-        </div>
-        <div class="col-md-6">
-          <img src="c:\Users\lu\Downloads\about-us-text-web-button-template-about-us-sign-icon-label-colorful-vector.jpg" class="img-fluid rounded shadow" alt="About Us" width="300px" height="300px">
-        </div>
-      </div>
-    </div>
-     
-    <!-- Services Section -->
-    <div class="container mt-5">
-      <h3 class="text-center">Our Services</h3>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <img src="BINI-LIGHTSTICK-1600x2000.jpeg" class="card-img-top" alt="Service 1" width="250px" height="300px">
-            <div class="card-body">
-              <h5 class="card-title">Web Development</h5>
-              <p class="card-text">We build scalable and modern websites.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
+      <h3 class="text-center mb-4">Exclusive Merch</h3>
+      <div class="scroll-container">
+        <div class="card">
+          <img src="BINI-LIGHTSTICK-1600x2000.jpeg" class="card-img-top" alt="Lightstick" width="400px">
+          <div class="card-body">
+            <h5 class="card-title">Bini Lightstick</h5>
+            <p class="card-text">₱ 1,500</p>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="c:\Users\lu\Downloads\8448908.png" class="card-img-top" alt="Service 2" width="250px" height="300px">
-            <div class="card-body">
-              <h5 class="card-title">UI/UX Design</h5>
-              <p class="card-text">Designing intuitive and user-friendly interfaces.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
+
+        <div class="card">
+          <img src="bini hoodie.jpg" class="card-img-top" alt="Hoodie" width="400px">
+          <div class="card-body">
+            <h5 class="card-title">Bini Hoodie</h5>
+            <p class="card-text">₱ 800</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="bini shirt.jpg" class="card-img-top" alt="Shirt">
+          <div class="card-body">
+            <h5 class="card-title">Bini Shirt</h5>
+            <p class="card-text">₱ 500</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="beanie.jpg" class="card-img-top" alt="Beanie">
+          <div class="card-body">
+            <h5 class="card-title">Beanie</h5>
+            <p class="card-text">₱ 300</p>
           </div>
         </div>
       </div>
     </div>
 
-    <footer class="bg-dark text-white py-4 mt-5">
+    <!-- Footer -->
+    <footer style="background-color: #00d1d1;" class="py-4 mt-5">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <h5>About Us</h5>
-            <p>We create innovative and responsive web applications.</p>
-          </div>
-          <div class="col-md-4">
-            <h5>Quick Links</h5>
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-white">Home</a></li>
-              <li><a href="#" class="text-white">Services</a></li>
-              <li><a href="#" class="text-white">Contact</a></li>
-            </ul>
-          </div>
+         
           <div class="col-md-4 text-center">
             <h5>Follow Us</h5>
             <a href="#" class="text-white me-2">Facebook</a>
@@ -118,11 +144,21 @@
           </div>
         </div>
         <hr>
-        <p class="text-center">&copy; 2024 MyWebsite. All Rights Reserved.</p>
+        <p class="text-center">&copy; 2024 Bululu. All Rights Reserved.</p>
       </div>
     </footer>
 
+    <!-- Navbar Scroll Behavior Script -->
+    <script>
+      const navbar = document.getElementById("navbarContainer");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY === 0) {
+          navbar.style.top = "0"; // Show navbar when scrolled to top
+        } else {
+          navbar.style.top = "-100px"; // Hide when scrolling down
+        }
+      });
+    </script>
   </body>
 </html>
-
-
